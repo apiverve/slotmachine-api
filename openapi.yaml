@@ -1,0 +1,176 @@
+openapi: 3.0.4
+info:
+  title: Slot Machine Simulator
+  description: Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/slotmachine:
+    get:
+      summary: Spin Slot Machine
+      description: Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics.
+      operationId: slotmachine
+      parameters:
+      - name: spins
+        default: '1'
+        in: query
+        schema:
+          type: number
+        required: false
+        description: 'Number of spins to simulate (1-100, default: 1)'
+        example: '5'
+      - name: reels
+        default: '3'
+        in: query
+        schema:
+          type: number
+        required: false
+        description: 'Number of reels (3-5, default: 3)'
+        example: '3'
+      - name: bet
+        default: '1'
+        in: query
+        schema:
+          type: number
+        required: false
+        description: 'Bet amount per spin (0-1000, default: 1)'
+        example: '1'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  total_spins: 5
+                  num_reels: 3
+                  bet_per_spin: 1
+                  spins:
+                  - spin_number: 1
+                    reels:
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    - symbol: ⭐
+                      name: Star
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    bet: 1
+                    payout: 0
+                    win_type: none
+                    is_win: false
+                  - spin_number: 2
+                    reels:
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    - symbol: "\U0001F347"
+                      name: Grape
+                    - symbol: "\U0001F34B"
+                      name: Lemon
+                    bet: 1
+                    payout: 0
+                    win_type: none
+                    is_win: false
+                  - spin_number: 3
+                    reels:
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    - symbol: "\U0001F514"
+                      name: Bell
+                    - symbol: "\U0001F514"
+                      name: Bell
+                    bet: 1
+                    payout: 0
+                    win_type: none
+                    is_win: false
+                  - spin_number: 4
+                    reels:
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    - symbol: "\U0001F34A"
+                      name: Orange
+                    - symbol: "\U0001F352"
+                      name: Cherry
+                    bet: 1
+                    payout: 0
+                    win_type: none
+                    is_win: false
+                  - spin_number: 5
+                    reels:
+                    - symbol: "\U0001F34A"
+                      name: Orange
+                    - symbol: "\U0001F514"
+                      name: Bell
+                    - symbol: "\U0001F34B"
+                      name: Lemon
+                    bet: 1
+                    payout: 0
+                    win_type: none
+                    is_win: false
+                  total_bet: 5
+                  total_winnings: 0
+                  net_profit: -5
+                  wins: 0
+                  losses: 5
+                  win_percentage: 0
+                  available_symbols:
+                  - symbol: "\U0001F352"
+                    name: Cherry
+                    payout_multiplier: 2
+                  - symbol: "\U0001F34B"
+                    name: Lemon
+                    payout_multiplier: 3
+                  - symbol: "\U0001F34A"
+                    name: Orange
+                    payout_multiplier: 5
+                  - symbol: "\U0001F347"
+                    name: Grape
+                    payout_multiplier: 10
+                  - symbol: "\U0001F514"
+                    name: Bell
+                    payout_multiplier: 20
+                  - symbol: ⭐
+                    name: Star
+                    payout_multiplier: 50
+                  - symbol: "\U0001F48E"
+                    name: Diamond
+                    payout_multiplier: 100
+                  - symbol: 7️⃣
+                    name: Seven
+                    payout_multiplier: 200
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
