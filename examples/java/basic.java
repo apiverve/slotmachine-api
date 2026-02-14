@@ -12,14 +12,8 @@ public class BasicExample {
         SlotMachineSimulatorAPIClient client = new SlotMachineSimulatorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Query parameters
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;spins&quot;, 5);
-        parameters.put(&quot;reels&quot;, 3);
-        parameters.put(&quot;bet&quot;, 1);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
