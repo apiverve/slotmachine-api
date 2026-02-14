@@ -17,14 +17,11 @@ def call_slotmachine_api():
     Make a GET request to the Slot Machine Simulator API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;spins&#x27;: 5, &#x27;reels&#x27;: 3, &#x27;bet&#x27;: 1}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
