@@ -15,7 +15,7 @@ const api = new slotmachineAPI({
 
 // Example query
 var query = {
-  spins: 5,
+  spins: 1,
   reels: 3,
   bet: 1
 };
