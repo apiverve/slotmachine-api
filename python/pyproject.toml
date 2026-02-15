@@ -1,17 +1,20 @@
 [project]
 name = "apiverve-slotmachinesimulator"
-version = "1.1.12"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
 description = "Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics."
-keywords = ["slot machine", "slots", "casino simulator", "gambling", "random slots"]
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
