@@ -1,1 +1,3 @@
-from .apiClient import SlotmachineAPIClient
+from .apiClient import SlotmachineAPIClient, SlotmachineAPIClientError
+
+__all__ = ['SlotmachineAPIClient', 'SlotmachineAPIClientError']
