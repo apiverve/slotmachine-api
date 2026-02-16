@@ -44,7 +44,11 @@ from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient
 # Initialize the client with your APIVerve API key
 api = SlotmachineAPIClient("[YOUR_API_KEY]")
 
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 ```
 
 ###### Simple Request
@@ -277,7 +285,11 @@ from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient, Slotma
 
 api = SlotmachineAPIClient("[YOUR_API_KEY]")
 
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 
 try:
     result = api.execute(query)
@@ -298,7 +310,11 @@ from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient, Slotma
 
 api = SlotmachineAPIClient("[YOUR_API_KEY]")
 
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 
 try:
     result = api.execute(query)
@@ -332,7 +348,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient, SlotmachineAPIClientError
 
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 
 # Using context manager ensures proper cleanup
 with SlotmachineAPIClient("[YOUR_API_KEY]") as api:
@@ -358,7 +378,11 @@ from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient
 # Enable debug mode
 api = SlotmachineAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "spins": 1, "reels": 3, "bet": 1 }
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -373,8 +397,13 @@ from apiverve_slotmachinesimulator.apiClient import SlotmachineAPIClient
 
 api = SlotmachineAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "spins": 1,
+    "reels": 3,
+    "bet": 1
+}
+
 try:
-    query = { "spins": 1, "reels": 3, "bet": 1 }
     result = api.execute(query)
     print(result)
 finally:
