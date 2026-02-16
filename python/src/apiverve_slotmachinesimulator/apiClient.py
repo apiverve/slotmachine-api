@@ -23,7 +23,11 @@ class ValidationError(SlotmachineAPIClientError):
 
 class SlotmachineAPIClient:
     # Validation rules for parameters (generated from schema)
-    VALIDATION_RULES = {"spins": {"type": "integer", "required": False, "min": 1, "max": 5, "default": 1}, "reels": {"type": "integer", "required": False, "min": 3, "max": 5, "default": 3}, "bet": {"type": "number", "required": False, "min": 0, "max": 1000, "default": 1}}
+    VALIDATION_RULES = {
+        "spins": {"type": "integer", "required": False, "min": 1, "max": 5, "default": 1},
+        "reels": {"type": "integer", "required": False, "min": 3, "max": 5, "default": 3},
+        "bet": {"type": "number", "required": False, "min": 0, "max": 1000, "default": 1}
+    }
 
     # Format validation patterns
     FORMAT_PATTERNS = {
@@ -71,18 +75,10 @@ class SlotmachineAPIClient:
                 "API key is required. Get your API key at: https://apiverve.com"
             )
 
-        # Check format (alphanumeric, hyphens, and underscores for prefixed keys)
+        # Check format (GUID, prefixed keys like apv_xxx, or alphanumeric)
         if not re.match(r'^[a-zA-Z0-9_-]+$', api_key):
             raise SlotmachineAPIClientError(
                 "Invalid API key format. API key should only contain letters, numbers, hyphens, and underscores. "
-                "Get your API key at: https://apiverve.com"
-            )
-
-        # Check length (at least 32 characters without hyphens/underscores)
-        trimmed_key = api_key.replace('-', '').replace('_', '')
-        if len(trimmed_key) < 32:
-            raise SlotmachineAPIClientError(
-                "Invalid API key. API key appears to be too short. "
                 "Get your API key at: https://apiverve.com"
             )
 
