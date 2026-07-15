@@ -136,12 +136,12 @@ async function makeRequest() {
         "spin_number": 1,
         "reels": [
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "🍋",
+            "name": "Lemon"
           },
           {
-            "symbol": "⭐",
-            "name": "Star"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
             "symbol": "🍒",
@@ -157,8 +157,29 @@ async function makeRequest() {
         "spin_number": 2,
         "reels": [
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "⭐",
+            "name": "Star"
+          },
+          {
+            "symbol": "🍋",
+            "name": "Lemon"
+          },
+          {
+            "symbol": "⭐",
+            "name": "Star"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 3,
+        "reels": [
+          {
+            "symbol": "🍊",
+            "name": "Orange"
           },
           {
             "symbol": "🍇",
@@ -175,27 +196,6 @@ async function makeRequest() {
         "is_win": false
       },
       {
-        "spin_number": 3,
-        "reels": [
-          {
-            "symbol": "🍒",
-            "name": "Cherry"
-          },
-          {
-            "symbol": "🔔",
-            "name": "Bell"
-          },
-          {
-            "symbol": "🔔",
-            "name": "Bell"
-          }
-        ],
-        "bet": 1,
-        "payout": 0,
-        "win_type": "none",
-        "is_win": false
-      },
-      {
         "spin_number": 4,
         "reels": [
           {
@@ -203,12 +203,12 @@ async function makeRequest() {
             "name": "Cherry"
           },
           {
-            "symbol": "🍊",
-            "name": "Orange"
+            "symbol": "⭐",
+            "name": "Star"
           },
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "🔔",
+            "name": "Bell"
           }
         ],
         "bet": 1,
@@ -220,30 +220,30 @@ async function makeRequest() {
         "spin_number": 5,
         "reels": [
           {
-            "symbol": "🍊",
-            "name": "Orange"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
-            "symbol": "🔔",
-            "name": "Bell"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
-            "symbol": "🍋",
-            "name": "Lemon"
+            "symbol": "7️⃣",
+            "name": "Seven"
           }
         ],
         "bet": 1,
-        "payout": 0,
-        "win_type": "none",
-        "is_win": false
+        "payout": 0.5,
+        "win_type": "small",
+        "is_win": true
       }
     ],
     "total_bet": 5,
-    "total_winnings": 0,
-    "net_profit": -5,
-    "wins": 0,
-    "losses": 5,
-    "win_percentage": 0,
+    "total_winnings": 0.5,
+    "net_profit": -4.5,
+    "wins": 1,
+    "losses": 4,
+    "win_percentage": 20,
     "available_symbols": [
       {
         "symbol": "🍒",
