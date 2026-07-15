@@ -4,46 +4,58 @@ declare module '@apiverve/slotmachine' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface slotmachineResponse {
     status: string;
     error: string | null;
     data: SlotMachineSimulatorData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface SlotMachineSimulatorData {
-      totalSpins:       number;
-      numReels:         number;
-      betPerSpin:       number;
+      totalSpins:       number | null;
+      numReels:         number | null;
+      betPerSpin:       number | null;
       spins:            Spin[];
-      totalBet:         number;
-      totalWinnings:    number;
-      netProfit:        number;
-      wins:             number;
-      losses:           number;
-      winPercentage:    number;
+      totalBet:         number | null;
+      totalWinnings:    number | null;
+      netProfit:        number | null;
+      wins:             number | null;
+      losses:           number | null;
+      winPercentage:    number | null;
       availableSymbols: AvailableSymbol[];
   }
   
   interface AvailableSymbol {
-      symbol:           string;
-      name:             string;
-      payoutMultiplier: number;
+      symbol:           null | string;
+      name:             null | string;
+      payoutMultiplier: number | null;
   }
   
   interface Spin {
-      spinNumber: number;
+      spinNumber: number | null;
       reels:      Reel[];
-      bet:        number;
-      payout:     number;
-      winType:    string;
-      isWin:      boolean;
+      bet:        number | null;
+      payout:     number | null;
+      winType:    null | string;
+      isWin:      boolean | null;
   }
   
   interface Reel {
-      symbol: string;
-      name:   string;
+      symbol: null | string;
+      name:   null | string;
   }
 
   export default class slotmachineWrapper {
