@@ -14,18 +14,18 @@ namespace APIVerve.API.SlotMachineSimulator
         /// Number of spins to simulate
         /// </summary>
         [JsonProperty("spins")]
-        public string Spins { get; set; }
+        public int? Spins { get; set; }
 
         /// <summary>
         /// Number of reels
         /// </summary>
         [JsonProperty("reels")]
-        public string Reels { get; set; }
+        public int? Reels { get; set; }
 
         /// <summary>
         /// Bet amount per spin
         /// </summary>
         [JsonProperty("bet")]
-        public string Bet { get; set; }
+        public double? Bet { get; set; }
     }
 }
