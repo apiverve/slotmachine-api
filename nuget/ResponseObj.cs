@@ -25,39 +25,42 @@ namespace APIVerve.API.SlotMachineSimulator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("total_spins")]
-        public long TotalSpins { get; set; }
+        public long? TotalSpins { get; set; }
 
         [JsonProperty("num_reels")]
-        public long NumReels { get; set; }
+        public long? NumReels { get; set; }
 
         [JsonProperty("bet_per_spin")]
-        public long BetPerSpin { get; set; }
+        public long? BetPerSpin { get; set; }
 
         [JsonProperty("spins")]
         public Spin[] Spins { get; set; }
 
         [JsonProperty("total_bet")]
-        public long TotalBet { get; set; }
+        public long? TotalBet { get; set; }
 
         [JsonProperty("total_winnings")]
-        public long TotalWinnings { get; set; }
+        public double? TotalWinnings { get; set; }
 
         [JsonProperty("net_profit")]
-        public long NetProfit { get; set; }
+        public double? NetProfit { get; set; }
 
         [JsonProperty("wins")]
-        public long Wins { get; set; }
+        public long? Wins { get; set; }
 
         [JsonProperty("losses")]
-        public long Losses { get; set; }
+        public long? Losses { get; set; }
 
         [JsonProperty("win_percentage")]
-        public long WinPercentage { get; set; }
+        public long? WinPercentage { get; set; }
 
         [JsonProperty("available_symbols")]
         public AvailableSymbol[] AvailableSymbols { get; set; }
@@ -72,28 +75,28 @@ namespace APIVerve.API.SlotMachineSimulator
         public string Name { get; set; }
 
         [JsonProperty("payout_multiplier")]
-        public long PayoutMultiplier { get; set; }
+        public long? PayoutMultiplier { get; set; }
     }
 
     public partial class Spin
     {
         [JsonProperty("spin_number")]
-        public long SpinNumber { get; set; }
+        public long? SpinNumber { get; set; }
 
         [JsonProperty("reels")]
         public Reel[] Reels { get; set; }
 
         [JsonProperty("bet")]
-        public long Bet { get; set; }
+        public long? Bet { get; set; }
 
         [JsonProperty("payout")]
-        public long Payout { get; set; }
+        public double? Payout { get; set; }
 
         [JsonProperty("win_type")]
         public string WinType { get; set; }
 
         [JsonProperty("is_win")]
-        public bool IsWin { get; set; }
+        public bool? IsWin { get; set; }
     }
 
     public partial class Reel
@@ -103,5 +106,17 @@ namespace APIVerve.API.SlotMachineSimulator
 
         [JsonProperty("name")]
         public string Name { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
