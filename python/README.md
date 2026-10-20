@@ -1,13 +1,12 @@
 Slot Machine Simulator API
 ============
 
-Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics.
+Slot Machine Simulator generates slot machine reel spins for configurable reels, bet sizes, and spin counts. Every run outputs symbol names and emoji for each reel; paid plans add payout calculations, win tracking, and net profit statistics.
 
-![Build Status](https://img.shields.io/badge/build-passing-green)
-![Code Climate](https://img.shields.io/badge/maintainability-B-purple)
-![Prod Ready](https://img.shields.io/badge/production-ready-blue)
 
-This is a Python API Wrapper for the [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source=pypi&utm_medium=readme)
+[![PyPI version](https://img.shields.io/pypi/v/apiverve-slotmachinesimulator.svg)](https://pypi.org/project/apiverve-slotmachinesimulator/)
+
+This is a Python wrapper for the [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -29,8 +28,8 @@ pip3 install apiverve-slotmachinesimulator
 
 ## Configuration
 
-Before using the slotmachine API client, you have to setup your account and obtain your API Key.
-You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=readme)
+Before using the Slot Machine Simulator API client, you have to setup your account and obtain your API Key.
+You can get it by signing up at [https://apiverve.com](https://apiverve.com?utm_source=pypi&utm_medium=referral&utm_content=readme)
 
 ---
 
@@ -64,7 +63,7 @@ except Exception as e:
 
 ## Usage
 
-The Slot Machine Simulator API documentation is found here: [https://docs.apiverve.com/ref/slotmachine](https://docs.apiverve.com/ref/slotmachine?utm_source=pypi&utm_medium=readme).
+The Slot Machine Simulator API documentation is found here: [https://docs.apiverve.com/ref/slotmachine](https://docs.apiverve.com/ref/slotmachine?utm_source=pypi&utm_medium=referral&utm_content=readme).
 You can find parameters, example responses, and status codes documented here.
 
 ### Setup
@@ -118,12 +117,12 @@ print(result)
         "spin_number": 1,
         "reels": [
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "🍋",
+            "name": "Lemon"
           },
           {
-            "symbol": "⭐",
-            "name": "Star"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
             "symbol": "🍒",
@@ -139,8 +138,29 @@ print(result)
         "spin_number": 2,
         "reels": [
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "⭐",
+            "name": "Star"
+          },
+          {
+            "symbol": "🍋",
+            "name": "Lemon"
+          },
+          {
+            "symbol": "⭐",
+            "name": "Star"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 3,
+        "reels": [
+          {
+            "symbol": "🍊",
+            "name": "Orange"
           },
           {
             "symbol": "🍇",
@@ -157,27 +177,6 @@ print(result)
         "is_win": false
       },
       {
-        "spin_number": 3,
-        "reels": [
-          {
-            "symbol": "🍒",
-            "name": "Cherry"
-          },
-          {
-            "symbol": "🔔",
-            "name": "Bell"
-          },
-          {
-            "symbol": "🔔",
-            "name": "Bell"
-          }
-        ],
-        "bet": 1,
-        "payout": 0,
-        "win_type": "none",
-        "is_win": false
-      },
-      {
         "spin_number": 4,
         "reels": [
           {
@@ -185,12 +184,12 @@ print(result)
             "name": "Cherry"
           },
           {
-            "symbol": "🍊",
-            "name": "Orange"
+            "symbol": "⭐",
+            "name": "Star"
           },
           {
-            "symbol": "🍒",
-            "name": "Cherry"
+            "symbol": "🔔",
+            "name": "Bell"
           }
         ],
         "bet": 1,
@@ -202,30 +201,30 @@ print(result)
         "spin_number": 5,
         "reels": [
           {
-            "symbol": "🍊",
-            "name": "Orange"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
-            "symbol": "🔔",
-            "name": "Bell"
+            "symbol": "🍒",
+            "name": "Cherry"
           },
           {
-            "symbol": "🍋",
-            "name": "Lemon"
+            "symbol": "7️⃣",
+            "name": "Seven"
           }
         ],
         "bet": 1,
-        "payout": 0,
-        "win_type": "none",
-        "is_win": false
+        "payout": 0.5,
+        "win_type": "small",
+        "is_win": true
       }
     ],
     "total_bet": 5,
-    "total_winnings": 0,
-    "net_profit": -5,
-    "wins": 0,
-    "losses": 5,
-    "win_percentage": 0,
+    "total_winnings": 0.5,
+    "net_profit": -4.5,
+    "wins": 1,
+    "losses": 4,
+    "win_percentage": 20,
     "available_symbols": [
       {
         "symbol": "🍒",
@@ -415,7 +414,7 @@ finally:
 
 ## Customer Support
 
-Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=readme).
+Need any assistance? [Get in touch with Customer Support](https://apiverve.com/contact?utm_source=pypi&utm_medium=referral&utm_content=readme).
 
 ---
 
@@ -426,12 +425,12 @@ Stay up to date by following [@apiverveHQ](https://twitter.com/apiverveHQ) on Tw
 
 ## Legal
 
-All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=readme) and all legal documents and agreements.
+All usage of the APIVerve website, API, and services is subject to the [APIVerve Terms of Service](https://apiverve.com/terms?utm_source=pypi&utm_medium=referral&utm_content=readme) and all legal documents and agreements.
 
 ---
 
 ## License
-Licensed under the The MIT License (MIT)
+Licensed under the MIT License (MIT)
 
 Copyright (&copy;) 2026 APIVerve, and EvlarSoft LLC
 
