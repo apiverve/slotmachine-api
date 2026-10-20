@@ -1,13 +1,13 @@
-# [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics.
+Slot Machine Simulator generates slot machine reel spins for configurable reels, bet sizes, and spin counts. Every run outputs symbol names and emoji for each reel; paid plans add payout calculations, win tracking, and net profit statistics.
 
 The Slot Machine Simulator API provides a simple, reliable way to integrate slot machine simulator functionality into your applications. Built for developers who need production-ready slot machine simulator capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-GET-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -163,7 +163,7 @@ go get github.com/apiverve/slotmachine-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/slotmachine](https://docs.apiverve.com/ref/slotmachine)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -193,11 +193,185 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Slot Machine Simulator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "total_spins": 5,
+    "num_reels": 3,
+    "bet_per_spin": 1,
+    "spins": [
+      {
+        "spin_number": 1,
+        "reels": [
+          {
+            "symbol": "🍋",
+            "name": "Lemon"
+          },
+          {
+            "symbol": "🍒",
+            "name": "Cherry"
+          },
+          {
+            "symbol": "🍒",
+            "name": "Cherry"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 2,
+        "reels": [
+          {
+            "symbol": "⭐",
+            "name": "Star"
+          },
+          {
+            "symbol": "🍋",
+            "name": "Lemon"
+          },
+          {
+            "symbol": "⭐",
+            "name": "Star"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 3,
+        "reels": [
+          {
+            "symbol": "🍊",
+            "name": "Orange"
+          },
+          {
+            "symbol": "🍇",
+            "name": "Grape"
+          },
+          {
+            "symbol": "🍋",
+            "name": "Lemon"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 4,
+        "reels": [
+          {
+            "symbol": "🍒",
+            "name": "Cherry"
+          },
+          {
+            "symbol": "⭐",
+            "name": "Star"
+          },
+          {
+            "symbol": "🔔",
+            "name": "Bell"
+          }
+        ],
+        "bet": 1,
+        "payout": 0,
+        "win_type": "none",
+        "is_win": false
+      },
+      {
+        "spin_number": 5,
+        "reels": [
+          {
+            "symbol": "🍒",
+            "name": "Cherry"
+          },
+          {
+            "symbol": "🍒",
+            "name": "Cherry"
+          },
+          {
+            "symbol": "7️⃣",
+            "name": "Seven"
+          }
+        ],
+        "bet": 1,
+        "payout": 0.5,
+        "win_type": "small",
+        "is_win": true
+      }
+    ],
+    "total_bet": 5,
+    "total_winnings": 0.5,
+    "net_profit": -4.5,
+    "wins": 1,
+    "losses": 4,
+    "win_percentage": 20,
+    "available_symbols": [
+      {
+        "symbol": "🍒",
+        "name": "Cherry",
+        "payout_multiplier": 2
+      },
+      {
+        "symbol": "🍋",
+        "name": "Lemon",
+        "payout_multiplier": 3
+      },
+      {
+        "symbol": "🍊",
+        "name": "Orange",
+        "payout_multiplier": 5
+      },
+      {
+        "symbol": "🍇",
+        "name": "Grape",
+        "payout_multiplier": 10
+      },
+      {
+        "symbol": "🔔",
+        "name": "Bell",
+        "payout_multiplier": 20
+      },
+      {
+        "symbol": "⭐",
+        "name": "Star",
+        "payout_multiplier": 50
+      },
+      {
+        "symbol": "💎",
+        "name": "Diamond",
+        "payout_multiplier": 100
+      },
+      {
+        "symbol": "7️⃣",
+        "name": "Seven",
+        "payout_multiplier": 200
+      }
+    ]
+  }
 }
 ```
 
@@ -205,7 +379,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [Slot Machine Simulator API](https://apiverve.com/marketplace/slotmachine?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
