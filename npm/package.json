@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/slotmachine",
-  "version": "1.2.0",
-  "description": "Slot Machine Simulator is a tool for simulating slot machine spins with realistic reel symbols and payout calculations. It supports customizable number of reels, bet amounts, and multiple spins with detailed win/loss statistics.",
+  "version": "1.2.2",
+  "description": "Slot Machine Simulator generates slot machine reel spins for configurable reels, bet sizes, and spin counts. Every run outputs symbol names and emoji for each reel; paid plans add payout calculations, win tracking, and net profit statistics.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/slotmachine-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/slotmachine?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/slotmachine?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
