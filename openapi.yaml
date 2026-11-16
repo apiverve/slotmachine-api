@@ -43,7 +43,7 @@ paths:
           schema:
             type: number
           required: false
-          description: Bet amount per spin
+          description: Bet amount per spin, rounded to 2 decimal places
           example: 1
       responses:
         '200':
