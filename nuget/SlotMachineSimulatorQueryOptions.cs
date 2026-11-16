@@ -23,7 +23,7 @@ namespace APIVerve.API.SlotMachineSimulator
         public int? Reels { get; set; }
 
         /// <summary>
-        /// Bet amount per spin
+        /// Bet amount per spin, rounded to 2 decimal places
         /// </summary>
         [JsonProperty("bet")]
         public double? Bet { get; set; }
